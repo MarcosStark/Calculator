@@ -25,9 +25,7 @@ class calculatorClass{
                 case "7":
                 case "8":
                 case "9":
-                    this.isOperator();   
-                    this._lastElement.push(e.key);
-                    console.log("teste:" + this._lastElement);
+                    this.setLastOperator();   
                     break;
 
                     case "Escape": 
@@ -59,6 +57,17 @@ class calculatorClass{
     isOperator(){
 
         return this._operator.indexOf(this._lastElement);
+    }
+
+    setLastOperator(){
+
+        if(this.isOperator() == true) {
+
+        } else {
+
+        this._lastElement.push(e.key);
+        console.log("teste:" + this._lastElement);
+        }
     }
 
     calcOperation(){
