@@ -24,9 +24,9 @@ class calculatorClass{
                 case "6":
                 case "7":
                 case "8":
-                case "9":   
+                case "9":
+                    this.isOperator();   
                     this._lastElement.push(e.key);
-                    this.calcOperation();
                     console.log("teste:" + this._lastElement);
                     break;
 
@@ -54,6 +54,11 @@ class calculatorClass{
                     break;
             }
         })
+    }
+
+    isOperator(){
+
+        return this._operator.indexOf(this._lastElement);
     }
 
     calcOperation(){
