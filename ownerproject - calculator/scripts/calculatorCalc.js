@@ -1,5 +1,7 @@
 class calculatorClass{
 
+    _lastElement = [];
+
     constructor(){
 
         this.readKeyboard();
@@ -22,7 +24,8 @@ class calculatorClass{
                 case "7":
                 case "8":
                 case "9":   
-                    console.log("Some number!");
+                    this._lastElement.push(e.key);
+                    console.log("teste:" + this._lastElement);
                     break;
 
                     case "Escape": 
@@ -50,5 +53,6 @@ class calculatorClass{
             }
         })
     }
+    
     
 }
