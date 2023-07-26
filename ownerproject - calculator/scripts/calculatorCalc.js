@@ -1,6 +1,7 @@
 class calculatorClass{
 
     _lastElement = [];
+    _operator = ["+", "-", "*", "/", "%", "="];
 
     constructor(){
 
@@ -25,6 +26,7 @@ class calculatorClass{
                 case "8":
                 case "9":   
                     this._lastElement.push(e.key);
+                    this.calcOperation();
                     console.log("teste:" + this._lastElement);
                     break;
 
@@ -52,6 +54,11 @@ class calculatorClass{
                     break;
             }
         })
+    }
+
+    calcOperation(){
+
+
     }
     
     
