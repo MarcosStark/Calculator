@@ -1,7 +1,8 @@
 class calculatorClass{
 
-    _lastElement = [];
-    _operator = ["+", "-", "*", "/", "%", "="];
+    _displayCalc = [];
+    _lastElement;
+    _operator = ["+", "-", "*", "/", "%"];
 
     constructor(){
 
@@ -13,6 +14,7 @@ class calculatorClass{
 
         document.addEventListener("keyup", e=> {
 
+            this._lastElement = e.key;
             switch(e.key){
 
                 case "0":
@@ -25,7 +27,7 @@ class calculatorClass{
                 case "7":
                 case "8":
                 case "9":
-                    this.setLastOperator();   
+                    this.setLastOperator(e.key);   
                     break;
 
                     case "Escape": 
@@ -41,6 +43,7 @@ class calculatorClass{
                 case "/":
                 case "*":
                 case "%":
+                    this.setLastOperator(e.key);  
                     break;
     
                 case "Enter":
@@ -56,16 +59,16 @@ class calculatorClass{
 
     isOperator(){
 
-        return this._operator.indexOf(this._lastElement);
+        console.log(this._operator.indexOf(this._lastElement) > -1);
     }
 
-    setLastOperator(){
+    setLastOperator(value){
 
         if(this.isOperator() == true) {
 
         } else {
 
-        this._lastElement.push(e.key);
+        this._displayCalc.push(value);
         console.log("teste:" + this._lastElement);
         }
     }
