@@ -66,11 +66,16 @@ class calculatorClass{
 
         if(this.isOperator() == true) {
 
+            this._displayCalc.push(value);
         } else {
 
         this._displayCalc.push(value);
+        var teste = this._displayCalc.join("");
         console.log("teste:" + this._lastElement);
         }
+
+        console.log(this._displayCalc);
+        console.log("OKOK:" + teste);
     }
 
     calcOperation(){
