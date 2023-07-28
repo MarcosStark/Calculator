@@ -1,6 +1,7 @@
 class calculatorClass{
 
     _displayCalc = [];
+    _recorder = [];
     _lastElement;
     _operator = ["+", "-", "*", "/", "%"];
 
@@ -48,6 +49,7 @@ class calculatorClass{
     
                 case "Enter":
                 case "=":
+                    this.calcOperation();
                     break;
 
                 case ".":
@@ -59,27 +61,35 @@ class calculatorClass{
 
     isOperator(){
 
-        console.log(this._operator.indexOf(this._lastElement) > -1);
+        return this._operator.indexOf(this._lastElement) > -1;
     }
 
     setLastOperator(value){
 
         if(this.isOperator() == true) {
 
-            this._displayCalc.push(value);
+            var operator = value;
+            this._recorder = this._displayCalc;
+            this._displayCalc = [];
         } else {
 
         this._displayCalc.push(value);
         var teste = this._displayCalc.join("");
-        console.log("teste:" + this._lastElement);
+        //console.log("teste:" + this._lastElement);
         }
 
-        console.log(this._displayCalc);
-        console.log("OKOK:" + teste);
+        console.log("history:" + this._recorder);
+        console.log("1ª:" + teste);
+        console.log("Operator:" + operator);
     }
 
-    calcOperation(){
+    calcOperation(value){
 
+    if(operator == "+"){
+
+
+
+    }
 
     }
     
