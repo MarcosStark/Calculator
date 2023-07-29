@@ -6,6 +6,7 @@ class calculatorClass{
     _operator = ["+", "-", "*", "/", "%"];
     _operatorCalc;
     _teste;
+    _result = 0;
 
     constructor(){
 
@@ -68,12 +69,10 @@ class calculatorClass{
 
     setLastOperator(value){
 
-
         if(this._displayCalc != 0){
 
             this._recorder = this._displayCalc.join("");
-
-        }
+       }
 
         
         if(this.isOperator() == true) {
@@ -82,14 +81,14 @@ class calculatorClass{
             this._displayCalc = [];
         } else {
 
-        this._displayCalc.push(value);
-        this._teste = this._displayCalc.join("");
-        //console.log("teste:" + this._lastElement);
+                this._displayCalc.push(value);
+                this._teste = this._displayCalc.join("");
         }
 
+        /*console.log("Operator:" + this._operatorCalc);
         console.log("history:" + this._recorder); 
-        console.log("1ª:" + this._teste);
-        console.log("Operator:" + this._operatorCalc);
+        console.log("1ª:" + this._teste);*/
+        
     }
 
     calcOperation(){
@@ -99,7 +98,9 @@ class calculatorClass{
             case "+":
                 
                 this._result = (parseInt(this._recorder) + parseInt(this._teste));
+                this._recorder = this._result;  
                 console.log("result:" + this._result);
+                this._displayCalc = [];
                 break;
 
             case "-":
@@ -108,6 +109,7 @@ class calculatorClass{
                 this._result = (parseInt(this._recorder) - parseInt(this._teste));
                 this._recorder = this._result;  
                 console.log("result:" + this._result);
+                this._displayCalc = [];
                 break;
 
             case "*":
