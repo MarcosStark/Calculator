@@ -114,12 +114,16 @@ class calculatorClass{
 
             case "*":
                 this._result = (parseInt(this._recorder) * parseInt(this._teste));
+                this._recorder = this._result;  
                 console.log("result:" + this._result);
+                this._displayCalc = [];
                 break;
 
             case "/":
             this._result = (parseInt(this._recorder) / parseInt(this._teste));
+            this._recorder = this._result;  
             console.log("result:" + this._result);
+            this._displayCalc = [];
             break;
  
         }
