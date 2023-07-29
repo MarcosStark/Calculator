@@ -68,10 +68,17 @@ class calculatorClass{
 
     setLastOperator(value){
 
+
+        if(this._displayCalc != 0){
+
+            this._recorder = this._displayCalc.join("");
+
+        }
+
+        
         if(this.isOperator() == true) {
 
             this._operatorCalc = value;
-            this._recorder = this._displayCalc.join("");
             this._displayCalc = [];
         } else {
 
@@ -80,7 +87,7 @@ class calculatorClass{
         //console.log("teste:" + this._lastElement);
         }
 
-        console.log("history:" + this._recorder);
+        console.log("history:" + this._recorder); 
         console.log("1ª:" + this._teste);
         console.log("Operator:" + this._operatorCalc);
     }
@@ -90,12 +97,16 @@ class calculatorClass{
         switch(this._operatorCalc){
 
             case "+":
+                
                 this._result = (parseInt(this._recorder) + parseInt(this._teste));
                 console.log("result:" + this._result);
                 break;
 
             case "-":
+                  
+
                 this._result = (parseInt(this._recorder) - parseInt(this._teste));
+                this._recorder = this._result;  
                 console.log("result:" + this._result);
                 break;
 
