@@ -4,6 +4,8 @@ class calculatorClass{
     _recorder = [];
     _lastElement;
     _operator = ["+", "-", "*", "/", "%"];
+    _operatorCalc;
+    _teste;
 
     constructor(){
 
@@ -68,27 +70,28 @@ class calculatorClass{
 
         if(this.isOperator() == true) {
 
-            var operator = value;
-            this._recorder = this._displayCalc;
+            this._operatorCalc = value;
+            this._recorder = this._displayCalc.join("");
             this._displayCalc = [];
         } else {
 
         this._displayCalc.push(value);
-        var teste = this._displayCalc.join("");
+        this._teste = this._displayCalc.join("");
         //console.log("teste:" + this._lastElement);
         }
 
         console.log("history:" + this._recorder);
-        console.log("1ª:" + teste);
-        console.log("Operator:" + operator);
+        console.log("1ª:" + this._teste);
+        console.log("Operator:" + this._operatorCalc);
     }
 
     calcOperation(value){
 
-    if(operator == "+"){
+    if(this._operatorCalc == "+"){
 
+        this._result = (this._recorder.parseInt() + this._teste);
 
-
+        console.log("result:" + this._result);
     }
 
     }
