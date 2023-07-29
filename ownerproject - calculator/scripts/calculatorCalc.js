@@ -85,16 +85,33 @@ class calculatorClass{
         console.log("Operator:" + this._operatorCalc);
     }
 
-    calcOperation(value){
+    calcOperation(){
 
-    if(this._operatorCalc == "+"){
+        switch(this._operatorCalc){
 
-        this._result = (this._recorder.parseInt() + this._teste);
+            case "+":
+                this._result = (parseInt(this._recorder) + parseInt(this._teste));
+                console.log("result:" + this._result);
+                break;
 
-        console.log("result:" + this._result);
+            case "-":
+                this._result = (parseInt(this._recorder) - parseInt(this._teste));
+                console.log("result:" + this._result);
+                break;
+
+            case "*":
+                this._result = (parseInt(this._recorder) * parseInt(this._teste));
+                console.log("result:" + this._result);
+                break;
+
+            case "/":
+            this._result = (parseInt(this._recorder) / parseInt(this._teste));
+            console.log("result:" + this._result);
+            break;
+ 
+        }
     }
 
-    }
     
     
 }
