@@ -70,46 +70,24 @@ class calculatorClass{
 
     setLastOperator(value){
 
-        console.log("Start"); 
-
-        console.log("historyBefore:" + this._recorder); 
-        
-           /* if(this._displayCalc != 0){
-
-            this._recorder = this._displayCalc.join("");
-
-             }*/
-
-        
         if(this.isOperator() == true) {
 
             this._operatorCalc = value;
-            console.log("operator:" + this._operatorCalc);
             this._displayCalc = [];
 
         } else {
 
-            console.log("historyNOP:" + this._recorder); 
-            console.log("1ªNOP  :" + this._teste);
             this._displayCalc.push(value);
 
             if(this._operatorCalc != undefined){
+
                 this._teste = this._displayCalc.join("");
+
             } else {
 
                 this._recorder = this._displayCalc.join("");
             }
-            
-            
-            console.log("display:" + this._displayCalc);
-
-        }
-
-        /*console.log("Operator:" + this._operatorCalc);
-        console.log("history:" + this._recorder); 
-        console.log("1ª:" + this._teste);*/
-        console.log("End"); 
-        
+        }  
     }
 
     calcOperation(){
