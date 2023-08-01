@@ -93,7 +93,7 @@ class calculatorClass{
             console.log("1ªNOP  :" + this._teste);
             this._displayCalc.push(value);
 
-            if(this._operatorCalc == "+"){
+            if(this._operatorCalc != undefined){
                 this._teste = this._displayCalc.join("");
             } else {
 
