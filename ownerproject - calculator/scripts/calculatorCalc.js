@@ -74,11 +74,11 @@ class calculatorClass{
 
         console.log("historyBefore:" + this._recorder); 
         
-            if(this._displayCalc != 0){
+           /* if(this._displayCalc != 0){
 
             this._recorder = this._displayCalc.join("");
 
-       }
+             }*/
 
         
         if(this.isOperator() == true) {
@@ -92,11 +92,16 @@ class calculatorClass{
             console.log("historyNOP:" + this._recorder); 
             console.log("1ªNOP  :" + this._teste);
             this._displayCalc.push(value);
-            if(this._operatorCalc != 0){
+
+            if(this._operatorCalc == "+"){
                 this._teste = this._displayCalc.join("");
+            } else {
+
+                this._recorder = this._displayCalc.join("");
             }
             
-            this._recorder = this._displayCalc.join("");
+            
+            console.log("display:" + this._displayCalc);
 
         }
 
@@ -112,9 +117,9 @@ class calculatorClass{
         switch(this._operatorCalc){
 
             case "+":
-                console.log("op1:" + this._displayCalc);
+                console.log("op1:" + this._recorder);
                 console.log("op2:" + this._teste);
-                this._result = (parseInt(this._displayCalc) + parseInt(this._teste));
+                this._result = (parseInt(this._recorder) + parseInt(this._teste));
                 this._recorder = this._result;  
                 console.log("result:" + this._result);
                 this._displayCalc = [];
