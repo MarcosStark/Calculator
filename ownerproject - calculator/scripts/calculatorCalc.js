@@ -5,7 +5,7 @@ class calculatorClass{
     _lastElement;
     _operator = ["+", "-", "*", "/", "%"];
     _operatorCalc;
-    _teste;
+    _teste = [];
     _result = 0;
 
     constructor(){
@@ -67,27 +67,41 @@ class calculatorClass{
         return this._operator.indexOf(this._lastElement) > -1;
     }
 
+
     setLastOperator(value){
 
-        if(this._displayCalc != 0){
+        console.log("Start"); 
+
+        console.log("historyBefore:" + this._recorder); 
+        
+            if(this._displayCalc != 0){
 
             this._recorder = this._displayCalc.join("");
+            console.log("display:" + this._displayCalc);
        }
 
         
         if(this.isOperator() == true) {
 
             this._operatorCalc = value;
+            console.log("operator:" + this._operatorCalc);
             this._displayCalc = [];
+            console.log("history:" + this._recorder); 
+            console.log("1ª:" + this._teste);
         } else {
 
-                this._displayCalc.push(value);
-                this._teste = this._displayCalc.join("");
+            console.log("historyNOP:" + this._recorder); 
+            console.log("1ªNOP  :" + this._teste);
+            this._displayCalc.push(value);
+            this._teste = this._displayCalc.join("");
+            this._recorder = this._displayCalc.join("");
+
         }
 
         /*console.log("Operator:" + this._operatorCalc);
         console.log("history:" + this._recorder); 
         console.log("1ª:" + this._teste);*/
+        console.log("End"); 
         
     }
 
