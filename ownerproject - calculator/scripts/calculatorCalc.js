@@ -3,7 +3,7 @@ class calculatorClass{
     _displayCalc = [];
     _recorder = [];
     _lastElement;
-    _operator = ["+", "-", "*", "/", "%"];
+    _operator = ["+", "-", "*", "/"];
     _operatorCalc;
     _teste = [];
     _result = 0;
