@@ -92,7 +92,13 @@ class calculatorClass{
 
     calcOperation(){
 
-        switch(this._operatorCalc){
+        console.log(this._operatorCalc);    
+        this._result = parseInt(this._recorder) + this._operatorCalc + parseInt(this._teste);
+                this._recorder = this._result.join("");  
+                console.log("result:" + this._result);
+                this._displayCalc = [];
+
+        /*switch(this._operatorCalc){
 
             case "+":
                 this._result = (parseInt(this._recorder) + parseInt(this._teste));
@@ -122,7 +128,7 @@ class calculatorClass{
             this._displayCalc = [];
             break;
  
-        }
+        }*/
     }
 
     
