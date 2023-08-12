@@ -98,7 +98,7 @@ class calculatorClass{
                 console.log("result:" + this._result);
                 this._displayCalc = [];
 
-        /*switch(this._operatorCalc){
+        switch(this._operatorCalc){
 
             case "+":
                 this._result = (parseInt(this._recorder) + parseInt(this._teste));
@@ -128,9 +128,5 @@ class calculatorClass{
             this._displayCalc = [];
             break;
  
-        }*/
+        }
     }
-
-    
-    
-}
