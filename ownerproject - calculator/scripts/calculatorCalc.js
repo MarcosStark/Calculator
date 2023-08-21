@@ -11,6 +11,7 @@ class calculatorClass{
     constructor(){
 
         this.readKeyboard();
+        document.getElementById("display").innerHTML = "teste";
 
     }
 
