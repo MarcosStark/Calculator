@@ -16,9 +16,10 @@ class calculatorClass{
 
     readKeyboard(){
 
-        document.addEventListener("keyup", e=> {
+        document.addEventListener("keyup", e=> { 
 
             this._lastElement = e.key;
+            console.log(this._lastElement.length);
             switch(e.key){
 
                 case "0":
@@ -60,6 +61,7 @@ class calculatorClass{
                     break;
             }
         })
+
     }
 
     isOperator(){
