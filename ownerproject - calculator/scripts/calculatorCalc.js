@@ -10,8 +10,7 @@ class calculatorClass{
 
     constructor(){
 
-        this.readKeyboard();
-        document.getElementById("display").innerHTML = "teste";
+        this.readKeyboard();   
 
     }
 
@@ -88,7 +87,8 @@ class calculatorClass{
 
                 this._recorder = this._displayCalc.join("");
             }
-        }  
+        } 
+        document.getElementById("display").innerHTML = this._lastElement; 
     }
 
     calcOperation(){
@@ -110,6 +110,7 @@ class calculatorClass{
         
     }
 
+        document.getElementById("display").innerHTML = this._result; 
         this._recorder = this._result;  
         console.log("result:" + this._result);
         this._displayCalc = []; 
