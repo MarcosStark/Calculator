@@ -81,11 +81,11 @@ class calculatorClass{
 
             if(this._operatorCalc != undefined){
 
-                this._teste = parseInt(this._displayCalc);
+                this._teste = this._displayCalc.join("");
 
             } else {
 
-                this._recorder = parseInt(this._displayCalc);
+                this._recorder = this._displayCalc.join("");
             }
         }  
     }
@@ -117,11 +117,12 @@ class calculatorClass{
             this._result = (parseInt(this._recorder) / parseInt(this._teste));
             break;
 
-            this._recorder = this._result;  
-            console.log("result:" + this._result);
-            this._displayCalc = [];
             
         
     }
+
+    this._recorder = this._result;  
+    console.log("result:" + this._result);
+    this._displayCalc = [];
 }
 }
