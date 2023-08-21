@@ -2,23 +2,24 @@ class calculatorClass{
 
     _displayCalc = [];
     _recorder = [];
-    _lastElement;
+    _lastElement = [];
     _operator = ["+", "-", "*", "/"];
     _operatorCalc;
     _teste = [];
     _result = 0;
+    _okok = 0;
 
     constructor(){
 
         this.readKeyboard();   
-
     }
-
+    
     readKeyboard(){
-
+ 
+    this._okok = this._oko + 1;
         document.addEventListener("keyup", e=> { 
 
-            this._lastElement = e.key;
+            this._lastElement[this._okok] = e.key;
             console.log(this._lastElement.length);
             switch(e.key){
 
