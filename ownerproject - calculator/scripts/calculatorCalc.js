@@ -81,22 +81,18 @@ class calculatorClass{
 
             if(this._operatorCalc != undefined){
 
-                this._teste = this._displayCalc.join("");
+                this._teste = parseInt(this._displayCalc);
 
             } else {
 
-                this._recorder = this._displayCalc.join("");
+                this._recorder = parseInt(this._displayCalc);
             }
         }  
     }
 
     calcOperation(){
-        var ok = ["3","+","5"]
-        var teste =  ok.replace(",", " "); 
-        console.log(teste); 
 
-        console.log("teste05: "  + typeof okokok); 
-        console.log(this._operatorCalc);    
+        console.log(typeof this._operatorCalc);    
         this._result = this._recorder + this._operatorCalc + this._teste;
                 //this._recorder = this._result.join;  
                 console.log("result: " + this._result);
