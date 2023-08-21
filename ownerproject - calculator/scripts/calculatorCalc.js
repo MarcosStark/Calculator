@@ -92,16 +92,6 @@ class calculatorClass{
 
     calcOperation(){
 
-        /*this._result = [this._recorder, this._operatorCalc, this._teste];
-                //this._recorder = this._result.join;  
-                console.log(this._result);
-                this._displayCalc = [];
-
-                let total = this._result.reduce((acumulador, valor) =>
-                acumulador + valor
-                , 0);
-                console.log(total); // 970*/
-
         switch(this._operatorCalc){
 
             case "+":
@@ -115,14 +105,12 @@ class calculatorClass{
                 break;
             case "/":
             this._result = (parseInt(this._recorder) / parseInt(this._teste));
-            break;
-
-            
+            break;     
         
     }
 
-    this._recorder = this._result;  
-    console.log("result:" + this._result);
-    this._displayCalc = [];
-}
+        this._recorder = this._result;  
+        console.log("result:" + this._result);
+        this._displayCalc = []; 
+    }
 }
