@@ -67,6 +67,11 @@ class calculatorClass{
         return this._operator.indexOf(this._lastElement) > -1;
     }
 
+    display(value){
+
+        document.getElementById("display").innerHTML = value;
+    }
+
 
     setLastOperator(value){
 
@@ -88,7 +93,7 @@ class calculatorClass{
                 this._recorder = this._displayCalc.join("");
             }
         } 
-        document.getElementById("display").innerHTML = this._lastElement; 
+        this.display(this._lastElement); 
     }
 
     calcOperation(){
@@ -110,7 +115,7 @@ class calculatorClass{
         
     }
 
-        document.getElementById("display").innerHTML = this._result; 
+        this.display(this._result); 
         this._recorder = this._result;  
         console.log("result:" + this._result);
         this._displayCalc = []; 
