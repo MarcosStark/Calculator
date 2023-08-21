@@ -91,14 +91,19 @@ class calculatorClass{
     }
 
     calcOperation(){
+        var ok = ["3","+","5"]
+        var teste =  ok.replace(",", " "); 
+        console.log(teste); 
 
+        console.log("teste05: "  + typeof okokok); 
         console.log(this._operatorCalc);    
-        this._result = parseInt(this._recorder) + this._operatorCalc + parseInt(this._teste);
-                this._recorder = this._result.join("");  
-                console.log("result:" + this._result);
+        this._result = this._recorder + this._operatorCalc + this._teste;
+                //this._recorder = this._result.join;  
+                console.log("result: " + this._result);
                 this._displayCalc = [];
+                console.log("teste02: " + typeof this._result);
 
-        switch(this._operatorCalc){
+        /*switch(this._operatorCalc){
 
             case "+":
                 this._result = (parseInt(this._recorder) + parseInt(this._teste));
@@ -126,7 +131,7 @@ class calculatorClass{
             this._recorder = this._result;  
             console.log("result:" + this._result);
             this._displayCalc = [];
-            break;
- 
-        }
+            break;*/
+        
     }
+}
