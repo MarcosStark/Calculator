@@ -66,7 +66,11 @@ class calculatorClass{
 
     isOperator(){
 
-        return this._operator.indexOf(this._lastElement) > -1;
+        for(var i = 1; i <= this._lastElement.length; i++){
+
+            return this._operator.indexOf(this._lastElement[i]) > -1;
+
+        }
     }
 
     display(value){
@@ -76,7 +80,6 @@ class calculatorClass{
 
 
     setLastOperator(value){
-        console.log("general: " + value);
 
         if(this.isOperator() == true) {
 
