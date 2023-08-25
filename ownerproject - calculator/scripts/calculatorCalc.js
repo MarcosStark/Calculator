@@ -16,10 +16,13 @@ class calculatorClass{
     
     readKeyboard(){
  
-    this._okok = this._okok + 1;
+        var x;
+
         document.addEventListener("keyup", e=> { 
 
-            this._lastElement[this._okok] = e.key;
+             x = x + 1;
+
+            this._lastElement[x] = e.key;
 
             switch(e.key){
 
@@ -34,7 +37,7 @@ class calculatorClass{
                 case "8":
                 case "9":
                     this.setLastOperator(e.key); 
-                    this.display(this._displayCalc);  
+                    this.display(this._displayCalc.join(""));  
                     break;
 
                     case "Escape": 
@@ -66,26 +69,27 @@ class calculatorClass{
 
     }
 
-    isOperator(){
+    isOperator(value){
 
-        for(var i = 1; i <= this._lastElement.length; i++){
+        //for(var i = 1; i <= this._lastElement.length; i++){
 
-            return this._operator.indexOf(this._lastElement[i]) > -1;
+            return this._operator.indexOf(value) > -1;
 
-        }
+        //}
     }
 
     display(value){
 
-        document.getElementById("display").innerHTML = value.join("");
+        document.getElementById("display").innerHTML = value;
     }
 
 
     setLastOperator(value){
 
-        if(this.isOperator() == true) {
-
+        if(this.isOperator(value) == true) {
+            
             this._operatorCalc = value;
+            
             this._displayCalc = [];
 
         } else {
@@ -101,7 +105,8 @@ class calculatorClass{
                 this._recorder = this._displayCalc.join("");
             }
         } 
-        this.display(this._lastElement); 
+
+        //this.display(this._lastElement); 
     }
 
     calcOperation(){
