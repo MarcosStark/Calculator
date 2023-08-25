@@ -7,7 +7,7 @@ class calculatorClass{
     _operatorCalc;
     _teste = [];
     _result = 0;
-    _okok = 0;
+    _displayHistory = [];
 
     constructor(){
 
@@ -37,7 +37,7 @@ class calculatorClass{
                 case "8":
                 case "9":
                     this.setLastOperator(e.key); 
-                    this.display(this._displayCalc.join(""));  
+                    this.display(this._displayHistory.join(""));  
                     break;
 
                     case "Escape": 
@@ -54,7 +54,9 @@ class calculatorClass{
                 case "*":
                 case "%":
                     this.setLastOperator(e.key); 
-                    this.display(this._displayCalc.push(e.key));
+                    this.display(this._displayHistory.join(""));  
+
+                    //this.display(this._displayCalc.push(e.key));
                     break;
     
                 case "Enter":
@@ -90,12 +92,15 @@ class calculatorClass{
         if(this.isOperator(value) == true) {
             
             this._operatorCalc = value;
-            
-            //this._displayCalc = [];
+
+            this._displayHistory.push(value);
+
+            this._displayCalc = [];
 
         } else {
 
             this._displayCalc.push(value);
+            this._displayHistory.push(value);
 
             if(this._operatorCalc != undefined){
 
