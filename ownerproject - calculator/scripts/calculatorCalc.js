@@ -53,7 +53,8 @@ class calculatorClass{
                 case "/":
                 case "*":
                 case "%":
-                    this.setLastOperator(e.key);  
+                    this.setLastOperator(e.key); 
+                    this.display(this._displayCalc.push(e.key));
                     break;
     
                 case "Enter":
@@ -90,7 +91,7 @@ class calculatorClass{
             
             this._operatorCalc = value;
             
-            this._displayCalc = [];
+            //this._displayCalc = [];
 
         } else {
 
@@ -106,7 +107,6 @@ class calculatorClass{
             }
         } 
 
-        //this.display(this._lastElement); 
     }
 
     calcOperation(){
