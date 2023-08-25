@@ -16,11 +16,10 @@ class calculatorClass{
     
     readKeyboard(){
  
-    this._okok = this._oko + 1;
+    this._okok = this._okok + 1;
         document.addEventListener("keyup", e=> { 
 
             this._lastElement[this._okok] = e.key;
-            console.log(this._lastElement.length);
             switch(e.key){
 
                 case "0":
@@ -77,9 +76,11 @@ class calculatorClass{
 
 
     setLastOperator(value){
+        console.log("general: " + value);
 
         if(this.isOperator() == true) {
 
+            console.log("operator: " + value);
             this._operatorCalc = value;
             this._displayCalc = [];
 
@@ -87,6 +88,7 @@ class calculatorClass{
 
             this._displayCalc.push(value);
 
+            console.log("number: " + value);
             if(this._operatorCalc != undefined){
 
                 this._teste = this._displayCalc.join("");
@@ -118,6 +120,7 @@ class calculatorClass{
         
     }
 
+    console.log("length: " + this._lastElement.length);
         this.display(this._result); 
         this._recorder = this._result;  
         console.log("result:" + this._result);
