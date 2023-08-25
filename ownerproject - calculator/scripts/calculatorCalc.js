@@ -20,6 +20,7 @@ class calculatorClass{
         document.addEventListener("keyup", e=> { 
 
             this._lastElement[this._okok] = e.key;
+
             switch(e.key){
 
                 case "0":
@@ -32,7 +33,8 @@ class calculatorClass{
                 case "7":
                 case "8":
                 case "9":
-                    this.setLastOperator(e.key);   
+                    this.setLastOperator(e.key); 
+                    this.display(e.key);  
                     break;
 
                     case "Escape": 
@@ -83,7 +85,6 @@ class calculatorClass{
 
         if(this.isOperator() == true) {
 
-            console.log("operator: " + value);
             this._operatorCalc = value;
             this._displayCalc = [];
 
@@ -91,7 +92,6 @@ class calculatorClass{
 
             this._displayCalc.push(value);
 
-            console.log("number: " + value);
             if(this._operatorCalc != undefined){
 
                 this._teste = this._displayCalc.join("");
@@ -123,7 +123,6 @@ class calculatorClass{
         
     }
 
-    console.log("length: " + this._lastElement.length);
         this.display(this._result); 
         this._recorder = this._result;  
         console.log("result:" + this._result);
