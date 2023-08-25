@@ -34,7 +34,7 @@ class calculatorClass{
                 case "8":
                 case "9":
                     this.setLastOperator(e.key); 
-                    this.display(e.key);  
+                    this.display(this._displayCalc);  
                     break;
 
                     case "Escape": 
@@ -77,7 +77,7 @@ class calculatorClass{
 
     display(value){
 
-        document.getElementById("display").innerHTML = value;
+        document.getElementById("display").innerHTML = value.join("");
     }
 
 
