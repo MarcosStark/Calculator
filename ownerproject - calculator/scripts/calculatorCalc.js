@@ -37,8 +37,8 @@ class calculatorClass{
                 case "7":
                 case "8":
                 case "9":
-                    this.setLastOperator(e.key); 
-                    this.display(this._displayHistory.join(""));  
+                    this.setLastOperator(e.key);
+                    this.clearAll(e.key);
                     break;
 
                     case "Escape": 
@@ -54,9 +54,7 @@ class calculatorClass{
                 case "/":
                 case "*":
                 case "%":
-                    this.setLastOperator(e.key); 
-                    this.display(this._displayHistory.join(""));  
-
+                    this.setLastOperator(e.key);   
                     //this.display(this._displayCalc.push(e.key));
                     break;
     
@@ -87,21 +85,24 @@ class calculatorClass{
         document.getElementById("display").innerHTML = value;
     }
 
-    clearAll(){
+    clearAll(value){
 
         document.querySelector(".btn-ac").addEventListener("click", e=>{
 
-            this._recorder = 0, this._teste = 0;
             this._displayHistory = [];
+            this._operatorCalc = undefined;
             this.display(0);
-            console.log("ookok:" + this._displayHistory);
+            console.log("1:" + this._recorder);
+            console.log("1:" + this._teste);
         });
 
     }
 
     setLastOperator(value){
 
-        if(this.isOperator(value) == true && this._displayHistory != undefined) {
+        if(this.isOperator(value) == true && this._displayHistory != 0) {
+
+            this.display(this._displayHistory.join(""));
             
             this._operatorCalc = value;
 
@@ -115,13 +116,16 @@ class calculatorClass{
             this._displayHistory.push(value);
 
             if(this._operatorCalc != undefined){
-
+                alert("passou2");
                 this._teste = this._displayCalc.join("");
 
             } else {
-
+                alert("passou");
                 this._recorder = this._displayCalc.join("");
             }
+
+            this.display(this._displayHistory.join("")); 
+            
         } 
 
     }
@@ -145,8 +149,11 @@ class calculatorClass{
         
     }
 
+    console.log("2:" + this._recorder);
+    console.log("2:" + this._teste);
+
         this.display(this._result); 
-        this._recorder = this._result;  
+        //this._recorder = this._result;  
         console.log("result:" + this._result);
         this._displayCalc = []; 
     }
