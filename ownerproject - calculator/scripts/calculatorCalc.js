@@ -94,13 +94,14 @@ class calculatorClass{
             this._recorder = 0, this._teste = 0;
             this._displayHistory = [];
             this.display(0);
+            console.log("ookok:" + this._displayHistory);
         });
 
     }
 
     setLastOperator(value){
 
-        if(this.isOperator(value) == true) {
+        if(this.isOperator(value) == true && this._displayHistory != undefined) {
             
             this._operatorCalc = value;
 
