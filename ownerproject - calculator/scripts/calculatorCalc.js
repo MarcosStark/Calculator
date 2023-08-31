@@ -12,6 +12,7 @@ class calculatorClass{
     constructor(){
 
         this.readKeyboard();   
+        this.clearAll();
     }
     
     readKeyboard(){
@@ -86,6 +87,16 @@ class calculatorClass{
         document.getElementById("display").innerHTML = value;
     }
 
+    clearAll(){
+
+        document.querySelector(".btn-ac").addEventListener("click", e=>{
+
+            this._recorder = 0, this._teste = 0;
+            this._displayHistory = [];
+            this.display(0);
+        });
+
+    }
 
     setLastOperator(value){
 
