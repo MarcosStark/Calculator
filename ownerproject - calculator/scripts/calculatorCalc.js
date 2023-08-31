@@ -108,8 +108,8 @@ class calculatorClass{
 
             
             this._lastElement.pop();
-            this._teste = this._lastElement;
-            console.log(this._teste);
+            this._recorder = this._lastElement;
+            console.log(this._recorder);
         });
 
     }
