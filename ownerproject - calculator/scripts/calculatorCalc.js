@@ -102,6 +102,8 @@ class calculatorClass{
 
         if(this.isOperator(value) == true && this._displayHistory != 0) {
 
+            alert("operator");
+
             this.display(this._displayHistory.join(""));
             
             this._operatorCalc = value;
@@ -116,11 +118,13 @@ class calculatorClass{
             this._displayHistory.push(value);
 
             if(this._operatorCalc != undefined){
-                alert("passou2");
+
+                alert("passou 1");
                 this._teste = this._displayCalc.join("");
 
             } else {
-                alert("passou");
+
+                alert("passou 2");
                 this._recorder = this._displayCalc.join("");
             }
 
@@ -153,7 +157,7 @@ class calculatorClass{
     console.log("2:" + this._teste);
 
         this.display(this._result); 
-        //this._recorder = this._result;  
+        this._recorder = this._result;  
         console.log("result:" + this._result);
         this._displayCalc = []; 
     }
