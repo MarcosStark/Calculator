@@ -13,17 +13,18 @@ class calculatorClass{
 
         this.readKeyboard();   
         this.clearAll();
+        this.clearLastElement();
     }
     
     readKeyboard(){
  
-        var x;
+        var x = -1;
 
         document.addEventListener("keyup", e=> { 
 
              x = x + 1;
 
-            this._lastElement[x] = e.key;
+            this._lastElement[x] = e.key;            
 
             switch(e.key){
 
@@ -39,6 +40,7 @@ class calculatorClass{
                 case "9":
                     this.setLastOperator(e.key);
                     this.clearAll(e.key);
+                    console.log("ata" + this._lastElement[2]);
                     break;
 
                     case "Escape": 
@@ -69,6 +71,8 @@ class calculatorClass{
             }
         })
 
+
+
     }
 
     isOperator(value){
@@ -85,7 +89,7 @@ class calculatorClass{
         document.getElementById("display").innerHTML = value;
     }
 
-    clearAll(value){
+    clearAll(){
 
         document.querySelector(".btn-ac").addEventListener("click", e=>{
 
@@ -97,6 +101,19 @@ class calculatorClass{
         });
 
     }
+
+    clearLastElement(){
+
+        document.querySelector(".btn-ce").addEventListener("click", e=>{
+
+            
+            this._lastElement.pop();
+            this._teste = this._lastElement;
+            console.log(this._teste);
+        });
+
+    }
+
 
     setLastOperator(value){
 
