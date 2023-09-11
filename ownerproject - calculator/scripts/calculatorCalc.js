@@ -89,6 +89,15 @@ class calculatorClass{
         document.getElementById("display").innerHTML = value;
     }
 
+    clearEntry(){
+
+        //this._teste = "@";
+        this._result = [];
+        //this._recorder = [];
+        this._displayHistory = [];
+        this.display(0);
+    }
+
     clearAll(){
 
         document.querySelector(".btn-ac").addEventListener("click", e=>{
@@ -136,7 +145,7 @@ class calculatorClass{
             this._displayCalc.push(value);
             //this._displayHistory.push(value);
 
-            if(this._operatorCalc != undefined && this._displayHistory != undefined){
+            if(this._operatorCalc != undefined && this._teste == 0){
 
                 alert("passou 1");
                 this._teste = this._displayCalc.join("");
@@ -144,7 +153,7 @@ class calculatorClass{
             } else if(this._displayHistory != 0) {
 
                 alert("passou 2");
-                this._recorder = this._displayCalc.join("");
+                this._recorder = this._displayCalc;
             } else {
 
                 this._operatorCalc = value;            
@@ -180,11 +189,11 @@ class calculatorClass{
 
         this.display(this._result); 
         this._recorder = this._result;  
+        this._teste = 0;
         console.log("result:" + this._result);
         this._displayCalc = []; 
         this._displayHistory = [];
         this._displayHistory.push(this._result);
-        //display(this._displayHistory.join("")); 
 
     }
 }
