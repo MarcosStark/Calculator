@@ -177,5 +177,6 @@ class calculatorClass{
         this._recorder = this._result;  
         console.log("result:" + this._result);
         this._displayCalc = []; 
+        this._displayHistory = [];
     }
 }
