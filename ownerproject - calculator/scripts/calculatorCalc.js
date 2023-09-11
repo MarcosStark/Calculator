@@ -91,9 +91,7 @@ class calculatorClass{
 
     clearEntry(){
 
-        //this._teste = "@";
         this._result = [];
-        //this._recorder = [];
         this._displayHistory = [];
         this.display(0);
     }
@@ -136,14 +134,11 @@ class calculatorClass{
             
             this._operatorCalc = value;
 
-            //this._displayHistory.push(value);
-
             this._displayCalc = [];
 
         } else {
 
             this._displayCalc.push(value);
-            //this._displayHistory.push(value);
 
             if(this._operatorCalc != undefined && this._teste == 0){
 
