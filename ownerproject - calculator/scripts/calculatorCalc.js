@@ -117,6 +117,8 @@ class calculatorClass{
 
     setLastOperator(value){
 
+        this._displayHistory.push(value);
+
         if(this.isOperator(value) == true && this._displayHistory != 0) {
 
             alert("operator");
@@ -125,16 +127,16 @@ class calculatorClass{
             
             this._operatorCalc = value;
 
-            this._displayHistory.push(value);
+            //this._displayHistory.push(value);
 
             this._displayCalc = [];
 
         } else {
 
             this._displayCalc.push(value);
-            this._displayHistory.push(value);
+            //this._displayHistory.push(value);
 
-            if(this._operatorCalc != undefined && this._displayHistory != 0){
+            if(this._operatorCalc != undefined && this._displayHistory != undefined){
 
                 alert("passou 1");
                 this._teste = this._displayCalc.join("");
@@ -145,7 +147,7 @@ class calculatorClass{
                 this._recorder = this._displayCalc.join("");
             } else {
 
-                this._displayHistory.push(value);
+                this._operatorCalc = value;            
             }
 
             this.display(this._displayHistory.join("")); 
@@ -181,5 +183,6 @@ class calculatorClass{
         console.log("result:" + this._result);
         this._displayCalc = []; 
         this._displayHistory = [];
+        console.log(this._displayHistory.value);
     }
 }
