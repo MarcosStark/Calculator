@@ -134,15 +134,18 @@ class calculatorClass{
             this._displayCalc.push(value);
             this._displayHistory.push(value);
 
-            if(this._operatorCalc != undefined){
+            if(this._operatorCalc != undefined && this._displayHistory != 0){
 
                 alert("passou 1");
                 this._teste = this._displayCalc.join("");
 
-            } else {
+            } else if(this._displayHistory != 0) {
 
                 alert("passou 2");
                 this._recorder = this._displayCalc.join("");
+            } else {
+
+                this._displayHistory.push(value);
             }
 
             this.display(this._displayHistory.join("")); 
@@ -171,7 +174,7 @@ class calculatorClass{
     }
 
     console.log("2:" + this._recorder);
-    console.log("2:" + this._teste);
+    console.log("3:" + this._teste);
 
         this.display(this._result); 
         this._recorder = this._result;  
